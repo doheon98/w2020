@@ -34,8 +34,7 @@ div.headerTop>div.toggle{
 }
 div.headerTop div.box1,
 div.headerTop div.box2,
-div.headerTop div.box3
-{
+div.headerTop div.box3{
 	width: 20px;height: 3px;background-color:#666;
 	position: absolute;border-radius: 2px;
 }
