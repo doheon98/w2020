@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>bxslider</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/jquery.bxslider.css">
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/jquery.bxslider.js"></script>
+	<script>
+		$(document).ready(function(){
+			var mySlider = $("#slider").bxSlider({
+				auto:true,  //슬라이드 자동
+				//mode:"fade",  //슬라이드 효과
+				controls:false,  //prev,next 버튼 유무
+				pager:false  //하단 이동버튼 유무
+			});
+
+			$(".nextBtn").click(function(){
+				mySlider.goToNextSlide();
+			});
+			$(".prevBtn").click(function(){
+				mySlider.goToPrevSlide();
+			});
+		});
+	</script>
+	<style>
+		#sliderWrap{width: 1200px;margin: 0 auto;position: relative;}
+		#slider img{width: 100%;}
+		.nextBtn,.prevBtn{
+			position: absolute;top: 50%;
+			margin-top:-50px;cursor: pointer;
+		}
+		.prevBtn{left: 10px;}
+		.nextBtn{right: 10px;}
+	</style>
+</head>
+<body>
+	<div id="sliderWrap">    <!-- ul위에 제어하기 위해 Wrap 한다. -->
+
+		<ul id="slider">
+			<li><img src="images/img01.jpg" alt=""></li>
+			<li><img src="images/img02.jpg" alt=""></li>
+		</ul>
+		<div class="nextBtn">
+			<img src="images/next.png" alt="">
+		</div>
+		<div class="prevBtn">
+			<img src="images/prev.png" alt="">
+		</div>
+	</div>
+</body>
+</html>
