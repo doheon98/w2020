@@ -53,10 +53,11 @@
 	.container ul.content li{
 		float: left;width:281.25px;margin-right: 25px;
 		position: relative;overflow:hidden;
+		border-radius:50px 0 50px 0;
 	}
 	.container ul.content .overlay{
 		width: 281.25px;height: 281.25px;
-		position: absolute;background-color:rgba(255,0,0,0.5);
+		position: absolute;/*background-color:rgba(255,0,0,0.5);*/
 		transition:0.3s;top:300px;
 	}
 	.container ul.content li:hover .overlay{top: 0;}
@@ -75,6 +76,9 @@
 		-webkit-background-size: cover;
 		background-size: cover;  /*백그라운드-사이즈는 따로 안됨*/
 	}
+	.blue{background-color:rgba(0,0,255,0.5);}
+	.red{background-color:rgba(255,0,0,0.5);}
+	.green{background-color:rgba(0,255,0,0.5);} /*오버레이에 색상 변경이 있기때문에 오버레이가 있는 곳에 클래스를 같이 넣어주고 수정한다.*/
 </style>
 <div class="container">
 	<div class="hdTitle">
@@ -84,25 +88,25 @@
 	<ul class="content clearfix">
 		<li>
 			<img src="../images/testimg.jpg" alt="">
-			<div class="overlay">
+			<div class="overlay blue">     <!-- 오버레이와 색상 변경 클래스를 같이 넣어준다. -->
 				<div class="txt">Lorem ipsum.</div>
 			</div>
 		</li>
 		<li>
 			<img src="../images/testimg.jpg" alt="">
-			<div class="overlay">
+			<div class="overlay blue">
 				<div class="txt">Lorem ipsum.</div>
 			</div>
 		</li>
 		<li>
 			<img src="../images/testimg.jpg" alt="">
-			<div class="overlay">
+			<div class="overlay blue">
 				<div class="txt">Lorem ipsum.</div>
 			</div>
 		</li>
 		<li>
 			<img src="../images/testimg.jpg" alt="">
-			<div class="overlay">
+			<div class="overlay blue">
 				<div class="txt">Lorem ipsum.</div>
 			</div>
 		</li>
@@ -118,25 +122,25 @@
 		<ul class="content clearfix">
 			<li>
 				<img src="../images/testimg.jpg" alt="">
-				<div class="overlay">
+				<div class="overlay red">
 					<div class="txt">Lorem ipsum.</div>
 				</div>
 			</li>
 			<li>
 				<img src="../images/testimg.jpg" alt="">
-				<div class="overlay">
+				<div class="overlay red">
 					<div class="txt">Lorem ipsum.</div>
 				</div>
 			</li>
 			<li>
 				<img src="../images/testimg.jpg" alt="">
-				<div class="overlay">
+				<div class="overlay red">
 					<div class="txt">Lorem ipsum.</div>
 				</div>
 			</li>
 			<li>
 				<img src="../images/testimg.jpg" alt="">
-				<div class="overlay">
+				<div class="overlay red">
 					<div class="txt">Lorem ipsum.</div>
 				</div>
 			</li>
@@ -152,25 +156,25 @@
 	<ul class="content clearfix">
 		<li>
 			<img src="../images/testimg.jpg" alt="">
-			<div class="overlay">
+			<div class="overlay green">
 				<div class="txt">Lorem ipsum.</div>
 			</div>
 		</li>
 		<li>
 			<img src="../images/testimg.jpg" alt="">
-			<div class="overlay">
+			<div class="overlay green">
 				<div class="txt">Lorem ipsum.</div>
 			</div>
 		</li>
 		<li>
 			<img src="../images/testimg.jpg" alt="">
-			<div class="overlay">
+			<div class="overlay green">
 				<div class="txt">Lorem ipsum.</div>
 			</div>
 		</li>
 		<li>
 			<img src="../images/testimg.jpg" alt="">
-			<div class="overlay">
+			<div class="overlay green">
 				<div class="txt">Lorem ipsum.</div>
 			</div>
 		</li>
