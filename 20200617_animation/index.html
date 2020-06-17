@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>animetion</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+		.box{
+			width: 100px;height: 100px;
+			background-color: #f00;
+			_animation-name:ani;   /*애니메이션 이름 정해주기 !없으면 작동 안됨*/
+			animation-duration: 1s;   /*애니메이션 작동시간 !없으면 작동 안됨*/
+			animation-fill-mode:forwards;  /*애니메이션 끝나는 부분에서 멈춤*/
+			animation-iteration-count:infinite;   /*숫자를 넣으면 숫자만큼 반복, infinite는 무한반복*/
+			animation-direction:alternate;    /*번갈아서 나오기 얼터네이트,리버스, 얼터네이트-리버스*/
+			_animation-delay:1s;   /*지연시간-정해둔 시간 뒤에 애니메이션 작동*/
+			animation-timing-function:ease;
+			_position: absolute; 
+		}
+		@keyframes ani{
+			/*from{width: 100px;}*/    /*시작*/
+			/*to{width: 200px;}*/      /*끝*/
+			0%{width: 100px;background-color: #f00;height: 100px;}
+			50%{width: 400px;background-color: #0f0;height: 50px;}
+			100%{width: 500px;background-color: #00f;height: 10px;}
+		}
+
+		.boxWrap{
+			width: 300px;height: 300px;
+			background-color:skyblue;position: relative;
+		}
+		.line{
+			width: 0;height: 10px;
+			background-color: #00f;
+			_nimation-name:lineAni;   /*호버됐을때 애니매이션이 작동하도록 하려면 호버값에 이름을 넣는다*/
+			animation-duration:1s;
+			animation-fill-mode:forwards;
+		}
+		@keyframes lineAni{
+			from{width: 0;}
+			to{width: 100%;}
+		}
+		.line1{
+			width: 10px;height: 0;
+			background-color: #00f;
+			position: absolute;top: 0;
+			_animation-name:lineAniOne;
+			animation-duration:1s;
+			animation-fill-mode:forwards;
+		}
+		@keyframes lineAniOne{
+			from{height: 0;}
+			to{height: 100%;}
+		}
+		.line2{
+			width: 10px;height: 0;
+			background-color: #00f;
+			position: absolute;bottom: 0;right: 0;    /*포지션값으로 시작지점을 정함*/
+			_animation-name:lineAniTwo;;
+			animation-duration:1s;
+			animation-fill-mode:forwards;
+		}
+		@keyframes lineAniTwo{
+			from{height: 0;}
+			to{height: 100%;}
+		}
+		.line3{
+			width: 0;height: 10px;
+			background-color: #00f;
+			_nimation-name:lineAniThree;
+			position: absolute;right: 0;bottom: 0;
+			animation-duration:1s;
+			animation-fill-mode:forwards;
+		}
+		@keyframes lineAniThree{
+			from{width: 0;}
+			to{width: 100%;}
+		}
+
+		.boxWrap:hover .line{animation-name:lineAni;}
+		.boxWrap:hover .line1{animation-name:lineAniOne;}
+		.boxWrap:hover .line2{animation-name:lineAniTwo;}
+		.boxWrap:hover .line3{animation-name:lineAniThree;}
+
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+
+
+	<div class="boxWrap">
+		<div class="line"></div>
+		<div class="line1"></div>
+		<div class="line2"></div>
+		<div class="line3"></div>
+	</div>
+</body>
+</html>
