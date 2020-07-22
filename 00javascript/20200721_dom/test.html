@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+</head>
+<body>
+	<script>
+		var name="이름";
+		document.write(name+"<br>");
+	</script>
+
+
+	
+
+	<button type="button" class="btn1" onclick="btn1()">버튼1</button>
+	<button type="button" class="btn2" onclick="btn2()">버튼2</button>
+	<p id="testTxt">이것은 문장입니다.</p>
+
+	<script>
+		var p=document.getElementById("testTxt");
+
+		function btn1(){
+			var text="안녕하세요!\n 저는 '한성용'입니다.";
+			// text+="\ 저는 '한성용'입니다."
+			alert(text);
+			p.style.color="red";
+			p.style.background="gray";
+		}
+		function btn2(){
+			p.style.color="black";
+			p.style.background="white";
+		}
+	</script>
+</body>
+</html>
