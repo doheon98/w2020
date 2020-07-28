@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			// $("p").hide();
+			// $("p").eq(0).hide();
+			var plen = $("p").length;
+			console.log(plen);
+			for(var i=0;i<plen;i++){
+				// $("p").eq(1).hide();
+				$("p").eq(i).css("background","red").css("font-size",30);
+			}
+
+			// $(선택자).on("click",function(){});
+			// $(선택자).click(function(){});
+			// dom.addEventListener("click",functino(){})
+			$(".btn_hide").click(function(){
+				$("p").slideUp();
+			});
+			$(".btn_show").click(function(){
+				$("p").slideDown();
+			});
+		});
+	</script>
+</head>
+<body>
+	<p>1. Lorem ipsum dolor.</p>
+	<p>2. Itaque, saepe tempora!</p>
+	<p>3. Illo, officia, est!</p>
+	<p>4. Hic, maxime numquam?</p>
+	<p>5. Earum, odit, porro.</p>
+	<p>6. Beatae nam, dolore.</p>
+	<p>7. Necessitatibus, soluta, velit.</p>
+	<p>8. Est, magnam, asperiores.</p>
+	<p>9. Cum, cupiditate excepturi.</p>
+	<p>10. Pariatur, quas, laboriosam.</p>
+
+	<button type="button" class="btn_show">button1</button>
+	<button type="button" class="btn_hide">button2</button>
+
+	<script>
+		// var tagP = document.getElementsByTagName("p");
+		// for(var i=0;i<tagP.length;i++){
+		// 	tagP[i].style.display = "none";
+		// }
+		// dom.onclick = han;
+		// function han(){}
+	</script>
+	<style>
+		.wrap{width: 400px;border: 1px solid #000;}
+		ul>li{
+			float: left;width: 100px;background: skyblue;margin-right: 10px;
+			text-align: center;line-height: 40px;
+		}
+		.box1,.box2,.box3{width: 400px;padding: 20px;_border: 1px solid #000;}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$(".box2,.box3").hide();
+			$("ul>li").eq(0).click(function(){
+				// $(".box1").show();
+				// $(".box2").hide();
+				// $(".box3").hide();
+				$(".box1,.box2,.box3").hide();
+				$(".box1").fadeIn();
+			});
+			$("ul>li").eq(1).click(function(){
+				$(".box1,.box2,.box3").hide();
+				$(".box2").fadeIn();
+			});
+			$("ul>li").eq(2).click(function(){
+				$(".box1,.box2,.box3").hide();
+				$(".box3").fadeIn();
+			});
+		});
+	</script>
+
+	<ul class="clearfix">
+		<li>menu1</li>  <!-- $("ul>li").eq(0).click(funtion(){}); -->
+		<li>menu2</li>  <!-- $("ul>li").rq(1).click() -->
+		<li>menu3</li>  <!-- $("ul>li").eq(2).click(); -->
+	</ul>
+	<!-- div.box$*3>{$. }+lorem10 -->
+	<div class="wrap">
+		<div class="box1">1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, veritatis!</div>
+		<div class="box2">2. Cumque culpa voluptatum enim, deleniti recusandae perferendis deserunt officia perspiciatis!</div>
+		<div class="box3">3. Velit dicta nobis magni eveniet aliquid quisquam totam, fuga ut.</div>
+	</div>
+
+
+</body>
+</html>
