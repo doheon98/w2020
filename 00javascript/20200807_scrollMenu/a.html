@@ -24,51 +24,56 @@
 	</style>
 	<script>
 		$(function(){
-			var menu = $("#top_menu>ul>li");
-			var contents = $("#contens>div");
+			var menu = $("#top_menu>ul>li");  //menu dom
+			var contents = $("#contens>div");  //div dom
 
-			menu.click(function(event){
-				event.preventDefault();
-				var i = $(this).index();
+			menu.click(function(event){  //$("#top_menu>ul>li").click()
+				event.preventDefault();  //a tag 클릭방지
+				var i = $(this).index();  //i 는 li 클릭시 몇 번째 배열값 0~2
 				var section = contents.eq(i);
 				var tt = section.offset().top - 114;
+
+
 				// contents.eq($(this).index()).offset().top;
 				// console.log(tt);
+
 				$("html,body").stop().animate({scrollTop:tt});
-
-			});
-
-			$(window).scroll(function(){
-				var sct = window.pageYOffset;
-				console.log(sct);
-
-				contents.each(function(index){
-					//var i = $(this).index();
-					if(sct >= $(this).offset().top -114){
-						menu.removeClass("on");
-						menu.eq(index).addClass("on");
-					}
 				});
 
-				// var paper = contents.eq(0).offset().top -114;
-				// if( sct >= paper){
-				// 	menu.removeClass("on");
-				// 	menu.eq(0).addClass("on");
-				// }
+				$(window).scroll(function(){
+				var sct = window.pageYOffset;  //$(window).scrollTop()와 같다
+				console.log(sct);
 
-				// var works = contents.eq(1).offset().top -114;
-				// if( sct >= works){
-				// 	menu.removeClass("on");
-				// 	menu.eq(1).addClass("on");
-				// }
+				// contents.each(function(index){
+				// 	//var i = $(this).index();
+				// 	if(sct >= $(this).offset().top -114){
+				// 		menu.removeClass("on");
+				// 		menu.eq(index).addClass("on");
+				// 	}
+				// });
 
-				// var email = contents.eq(2).offset().top -114;
-				// if( sct >= email){
-				// 	menu.removeClass("on");
-				// 	menu.eq(2).addClass("on");
-				// }
+				for (var i=0;i<menu.length;i++){
+					var paper = contents.eq(i).offset().top -114;
+					if(sct >= paper){
+						menu.removeClass("on").eq(i).addClass("on");
+					}
+				}
 
-			});
+					
+
+					// var works = contents.eq(1).offset().top -114;
+					// if(sct >= works){
+					// 	menu.removeClass("on");
+					// 	menu.eq(1).addClass("on");
+					// }
+
+					// var email = contents.eq(2).offset().top -114;
+					// if(sct >= email){
+					// 	menu.removeClass("on");
+					// 	menu.eq(2).addClass("on");
+					// }
+
+				});
 		});
 	</script>
 </head>
@@ -82,7 +87,7 @@
 				</a>
 			</h1>
 			<ul>
-				<li class="on"><a href="#paper">paper</a></li>
+				<li class="on"><a href="javascript:void(0)">paper</a></li>
 				<li><a href="#works">works</a></li>
 				<li><a href="#email">email</a></li>
 			</ul>
