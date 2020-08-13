@@ -26,23 +26,30 @@
 			var current = 0;
 			var banner = $("#wrapper li");
 			var i;
+			var overBtn = false;
 			
 			function slideNext(){
 				// current++;
 				
-				i = current + 1; //다음배너값구하기 current 0 1 2 
-				if(i==3){
-					i = 0;
+
+				if(overBtn == false){
+					overBtn = true;
+					i = current + 1; //다음배너값구하기 current 0 1 2 
+					if(i==3){
+						i = 0;
+					}
+
+
+					slideView("next");
+					// var currentEl = banner.eq(current); //현재 배너
+					// var nextEl = banner.eq(i); // 다음배너
+
+					// currentEl.css({left:0}).stop().animate({left:"-100%"},1000,function(){overBtn=false;});
+					// nextEl.css({left:"100%"}).stop().animate({left:0},1000);
 				}
 
-				var currentEl = banner.eq(current); //현재 배너
-				var nextEl = banner.eq(i); // 다음배너
-
-				currentEl.css({left:0}).stop().animate({left:"-100%"},1000);
-				nextEl.css({left:"100%"}).stop().animate({left:0},1000);
-
-				current = i; //최종 현재값
-				console.log(current);
+				// current = i; //최종 현재값
+				// console.log(current);
 
 			}
 			function slidePrev(){
@@ -53,13 +60,9 @@
 					i=2;
 				}
 
-				var currentEl01 = banner.eq(current);
-				var prevEl = banner.eq(i);
+				slideView("prev");
 
-				currentEl01.css({left:0}).stop().animate({left:"100%"},1000);
-				prevEl.css({left:"-100%"}).stop().animate({left:0},1000);
-
-				current = i;
+				
 				console.log(current);
 			}
 
@@ -70,6 +73,26 @@
 			$(".bt_prev").click(function(){
 				slidePrev();
 			});
+
+			function slideView(view){
+				var currentEl = banner.eq(current);
+				var nextEl = banner.eq(i);
+
+				if(view == "prev"){
+					currentEl.css({left:0}).stop().animate({left:"100%"},1000,function(){overBtn=false;});
+					nextEl.css({left:"-100%"}).stop().animate({left:0},1000);
+				}else{
+					currentEl.css({left:0}).stop().animate({left:"-100%"},1000,function(){overBtn=false;});
+					nextEl.css({left:"100%"}).stop().animate({left:0},1000);
+				}
+
+				current = i;
+			}
+			function trigger(){
+				$(".bt_next").trigger("click");
+			}
+			setInterval(trigger,1000); //1000 = 1초
+
 		});
 	</script>
 	<style>
